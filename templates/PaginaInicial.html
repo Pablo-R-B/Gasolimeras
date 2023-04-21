@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EncuentraGasolinera</title>
+    <style>
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            padding: 0px 50px 30px 30px;
+            flex-direction: row;
+            height: 100px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid black;
+            background-color: darkcyan;
+        }
+        .icono{
+            width: 70px;
+        }
+        .nombre{
+            width: 400px;
+            font-size: xxx-large;
+            font-weight: bolder;
+            font-family: 'Sedgwick Ave Display', cursive;
+        }
+        .logreg{
+            display: flex;
+            width: 250px;
+            justify-content: space-between;
+             font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 20px;
+        }
+        .login{
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            {#font-weight: bold;#}
+            padding-left: 10px;
+            padding-top: 10px;
+            {#padding: 8%;#}
+            border-radius: 20px;
+            text-align: center;
+            display: inline-block;
+
+        }
+        .register{
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            {#font-weight: bold;#}
+            {#padding-left: 20px;#}
+            {#padding-top: 10px;#}
+            {#padding: 8%;#}
+            border-radius: 20px;
+            text-align: center;
+            padding: 5px;
+
+
+        }
+        a{
+            text-decoration: none;
+        }
+        .body{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            {#flex-wrap: wrap;#}
+        }
+        .buscadorresultado{
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            margin: 40px 40px 40px 100px;
+        }
+        .buscador{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 200px;
+            margin-left: 300px;
+
+        }
+        .filtrar{
+            font-weight: bold;
+            text-align: center;
+            background-color: darkcyan;
+            border-radius: 50px 50px 0px 0px;
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: larger;
+        }
+        .parametros{
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            height: 100%;
+            justify-content: space-around;
+        }
+        .fila3{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+            margin-top: 2px;
+        }
+        .fila3>form>div{
+            width: 200px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .fila3>form>div>input{
+            width: 200px;
+            height: 40px;
+            text-indent: 10px;
+
+        }
+
+         .fila3>form>div>select{
+            width: 200px;
+            height: 40px;
+            text-indent: 10px;
+
+        }
+
+        .fila2{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+        form{height: 100%; display: flex; flex-direction: column;justify-content: space-evenly;}
+        .fila2>form>div{
+            width: 200px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .resultado{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-left: 25px;
+            width: 600px;
+        }
+        .resultado>div{
+            height: 70px;
+            margin: 15px 15px 5px 15px;
+            border: 1px solid black;
+        }
+        .mapa{
+            border: 1px solid black;
+            height: 500px;
+            width: 750px;
+            align-self: center;
+            margin-left: 10px;
+            margin-top: 290px;
+            margin-right: 150px;
+        }
+        .enviar{
+            display: flex;
+            justify-content: center;
+        }
+        .enviar>input{
+            margin-bottom: 2px;
+        }
+
+{#        .footer {#}
+{#            background: #000;#}
+{#            padding: 30px 0px;#}
+{#            font-family: 'Play', sans-serif;#}
+{#            text-align: center;#}
+{#        }#}
+{##}
+{#        .footer .row {#}
+{#            width: 100%;#}
+{#            margin: 1% 0%;#}
+{#            padding: 0.6% 0%;#}
+{#            color: gray;#}
+{#            font-size: 0.8em;#}
+{#        }#}
+{##}
+{#        .footer .row a {#}
+{#            text-decoration: none;#}
+{#            color: gray;#}
+{#            transition: 0.5s;#}
+{#        }#}
+{##}
+{#        .footer .row a:hover {#}
+{#            color: #fff;#}
+{#        }#}
+{##}
+{#        .footer .row ul {#}
+{#            width: 100%;#}
+{#        }#}
+{##}
+{#        .footer .row ul li {#}
+{#            display: inline-block;#}
+{#            margin: 0px 30px;#}
+{#        }#}
+{##}
+{#        .footer .row a i {#}
+{#            font-size: 2em;#}
+{#            margin: 0% 1%;#}
+{#        }#}
+{##}
+{#        @media (max-width: 720px) {#}
+{#            .footer {#}
+{#                text-align: left;#}
+{#                padding: 5%;#}
+{#            }#}
+{##}
+{#            .footer .row ul li {#}
+{#                display: block;#}
+{#                margin: 10px 0px;#}
+{#                text-align: left;#}
+{#            }#}
+{##}
+{#            .footer .row a i {#}
+{#                margin: 0% 3%;#}
+{#            }#}
+{#}#}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/Encuentra_GasolineraAPP"><div class="icono">
+            {% load static %}
+            <img src="{% static 'gas.png' %}" width="75px">
+        </div></a>
+        <div class="nombre">
+            EncuentraGasolinera
+        </div>
+        <div class="logreg">
+            <a href="/Encuentra_GasolineraAPP/login"><div class="login">
+                Iniciar Sesión
+            </div></a>
+            <a href="/Encuentra_GasolineraAPP/registro"><div class="register">
+                Regístrate
+            </div></a>
+        </div>
+    </header>
+    <div class="body">
+        <div class="buscadorresultado">
+            <div class="buscador">
+                <div class="filtrar">FILTROS</div>
+                <div class="parametros">
+                    <div class="fila3">
+                        <form method="POST">
+                        <div><input placeholder="CP DE LA UBICACIÓN"></div>
+                        <div><div>¿HORARIO 24H?</div> <div><input type="checkbox" ></div></div>
+                            <div><select name="tipogasolina">
+                                <option>Elige combustible</option>
+                                <option>Gasolina 95 E5</option>
+                                <option>Gasolina 95 E5 Premiun</option>
+                                <option>Gasolina 95 E10</option>
+                                <option>Gasolina 98 E5</option>
+                                <option>Gasolina 98 E10</option>
+                                <option>Diesel A</option>
+                                <option>Diesel A Premium</option>
+                            </select></div>
+                        </form>
+                    </div>
+                    <div class="fila2">
+                        <form method="POST">
+                        <div><div>DISTANCIA</div><div><input type="checkbox">2km</div><div><input type="checkbox">5km</div></div>
+                        <div><div>FAVORITA</div><div><input type="checkbox" disabled></div></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="enviar"><input type="submit" value="Búsqueda"></div>
+            </div>
+            <div class="resultado">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="mapa">
+
+        </div>
+    </div>
+</body>
+{#<footer>#}
+{#    <div class="footer">#}
+{#        <div class="row">#}
+{#            <a href="#"><i class="fa fa-facebook"></i></a>#}
+{#            <a href="#"><i class="fa fa-instagram"></i></a>#}
+{#            <a href="#"><i class="fa fa-youtube"></i></a>#}
+{#            <a href="#"><i class="fa fa-twitter"></i></a>#}
+{#        </div>#}
+{##}
+{#        <div class="row">#}
+{#            <ul>#}
+{#                <li><a href="#">Contacto</a></li>#}
+{#                <li><a href="#">Nuestros servicios</a></li>#}
+{#                <li><a href="#">Política de privacidad</a></li>#}
+{#                <li><a href="#">Términos y condiciones</a></li>#}
+{#                <li><a href="#">Trabaja con nosotros</a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{##}
+{#        <div class="row">#}
+{#            Copyright © 2023 EncuentraGasolinera - Todos los derechos reservados#}
+{#        </div>#}
+{#    </div>#}
+{#</footer>#}
+</html>
